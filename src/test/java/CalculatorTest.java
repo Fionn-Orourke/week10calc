@@ -17,14 +17,24 @@ public class CalculatorTest {
         assertEquals(8, myCalc.add(4,4));
     }
 
-    void testAddSuccess(){
 
-    }
     @Test
     void testAddFail(){
          Exception ex = assertThrows(IllegalArgumentException.class, ()->{myCalc.add(Integer.MAX_VALUE, 4);});
-         assertEquals("your valuse are too large", ex.getMessage());
+         assertEquals("your values are too large", ex.getMessage());
     }
+
+    @Test
+    void testSubtractSuccess(){
+        assertEquals(4, myCalc.subtract(8,4));
+    }
+
+    @Test
+    void testSubtractFail(){
+        Exception ex = assertThrows(IllegalArgumentException.class, ()->{myCalc.subtract(Integer.MAX_VALUE,4);});
+        assertEquals("your values are too large", ex.getMessage());
+    }
+
 
 
 }
